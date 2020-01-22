@@ -49,7 +49,7 @@ async function createProject(config) {
  * Creates a Github repository, team and add team members.
  *
  * @method createGithubRepo
- * @param config - User input.
+ * @param config - User input
  */
 async function createGithubRepo(config) {
     const githhubRepoId = await gitHubApi.createRepo(config.gitHubRepos || config.projectName, config.projectOrg, config.gitHubReposPrivacy);
