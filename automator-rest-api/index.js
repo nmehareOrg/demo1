@@ -62,7 +62,7 @@ async function createGithubRepo(config) {
  * Handles all Jira related things including creation of Jira project and team.
  *
  * @method createJiraProject
- * @param config - User input.
+ * @param config - User input
  */
 async function createJiraProject(config) {
     const jiraProjId = await jiraApi.createJiraProj(config.projectName, config.projectKey.toUpperCase());
