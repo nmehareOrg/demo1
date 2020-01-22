@@ -8,6 +8,7 @@ const SlackApi = require("./lib/slack-api"); //Slack
 const userPrompt = require("./lib/user-prompt") //user input
 require('dotenv').config();
 
+//Creating objects
 var confluenceApi = new ConfluenceApi();
 var jiraApi = new JiraApi();
 var gitHubApi = new GitHubApi();
