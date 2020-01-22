@@ -8,6 +8,7 @@ const SlackApi = require("./lib/slack-api"); //Slack
 const userPrompt = require("./lib/user-prompt") //user input
 require('dotenv').config();
 
+//Creating objects
 var confluenceApi = new ConfluenceApi();
 var jiraApi = new JiraApi();
 var gitHubApi = new GitHubApi();
@@ -49,7 +50,7 @@ async function createProject(config) {
  * Creates a Github repository, team and add team members.
  *
  * @method createGithubRepo
- * @param config - User input.
+ * @param config - User input
  */
 async function createGithubRepo(config) {
     const githhubRepoId = await gitHubApi.createRepo(config.gitHubRepos || config.projectName, config.projectOrg, config.gitHubReposPrivacy);
@@ -62,7 +63,7 @@ async function createGithubRepo(config) {
  * Handles all Jira related things including creation of Jira project and team.
  *
  * @method createJiraProject
- * @param config - User input.
+ * @param config - User input
  */
 async function createJiraProject(config) {
     const jiraProjId = await jiraApi.createJiraProj(config.projectName, config.projectKey.toUpperCase());
@@ -87,12 +88,18 @@ async function createJiraProject(config) {
  * Creates confluence space
  *
  * @method createConfluenceSpace
- * @param config - User input.
+ * @param config - User input
  */
 async function createConfluenceSpace(config) {
     await confluenceApi.createConSpace(config.projectName, config.projectKey.toUpperCase());
 }
 
+/**
+ * Creates Slack channel
+ *
+ * @method createSlackChannel
+ * @param config - User input
+ */
 async function createSlackChannel(config) {
     await slackApi.createChannel(config.projectName);
     await slackApi.lookForUserSlackId(config.projectTeam,config.userName,config.projectName);
