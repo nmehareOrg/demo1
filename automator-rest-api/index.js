@@ -87,7 +87,7 @@ async function createJiraProject(config) {
  * Creates confluence space
  *
  * @method createConfluenceSpace
- * @param config - User input.
+ * @param config - User input
  */
 async function createConfluenceSpace(config) {
     await confluenceApi.createConSpace(config.projectName, config.projectKey.toUpperCase());
