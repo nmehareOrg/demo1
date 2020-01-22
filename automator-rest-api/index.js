@@ -93,6 +93,12 @@ async function createConfluenceSpace(config) {
     await confluenceApi.createConSpace(config.projectName, config.projectKey.toUpperCase());
 }
 
+/**
+ * Creates Slack channel
+ *
+ * @method createSlackChannel
+ * @param config - User input
+ */
 async function createSlackChannel(config) {
     await slackApi.createChannel(config.projectName);
     await slackApi.lookForUserSlackId(config.projectTeam,config.userName,config.projectName);
