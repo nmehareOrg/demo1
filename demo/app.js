@@ -6,7 +6,7 @@ const token = "xoxp-885896185043-887139916225-897437338149-b6c3c7001039a9ae4a202
 const web = new WebClient(token);
 
 // This argument can be a channel ID, a DM ID, a MPDM ID, or a group ID
-const conversationId = 'testnam';
+const conversationId = 'testme';
 
 (async () => {
   // See: https://api.slack.com/methods/chat.postMessage
